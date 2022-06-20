@@ -1,0 +1,39 @@
+<app-nav></app-nav>
+<form #accForm="ngForm" (ngSubmit)="addList(accForm.value)">
+  <label>Account no.</label>
+<input type="number"  name="accn" #accn="ngModel"  required maxlength="5"  ngModel placeholder="acc.no">
+<span *ngIf="accn.invalid"> Invalid acc.no</span><br><br>
+<label> First name</label>
+<input type="text" name="fName" #fName="ngModel" placeholder="first name" ngModel >
+<input type="text" name="lName" #lName ="ngModel" placeholder="lastname" ngModel  ><br><br>
+<label>Amount </label>
+<input type="number" name="amnt" #amnt="ngModel" placeholder="amount" ngModel ><br><br>
+<button type="Submit">Submit</button>
+
+
+</form>
+
+
+<!-- <ul>
+  <li *ngFor="let v of item"> {{v.fName}} {{v.lName}}<br>-{{"Acc.no"+"="+v.accn}}<br>-{{"Amount"+"="+v.amnt+ "$"}} <br><button (click)="Deleteinfo(v)" >Delete</button> </li>
+</ul> -->
+<table class> 
+  <tr class="tbs">
+    <th>Account number</th>
+    <th> Firstname</th>
+    <th> Lastname</th>
+    <th> Amount</th>
+    <th> Action</th>
+
+  </tr>
+  <tr *ngFor="let v of item" class="table1">
+  <td>{{v.accn}}</td>
+  <td>{{v.fName}}</td>
+  <td> {{v.lName}}</td>
+  <td> {{v.amnt+"$"}}</td>
+  <td><button class="btn" (click)="Deleteinfo(v)" >Delete</button></td>
+
+</tr>
+</table>
+
+<app-footer></app-footer>

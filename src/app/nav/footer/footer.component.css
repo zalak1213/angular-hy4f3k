@@ -1,0 +1,16 @@
+.footer-p {
+  text-align: center;
+
+  position: fixed;
+  bottom: 0px;
+
+  padding: 10px;
+}
+.last-btn {
+  background-color: maroon;
+  color: white;
+}
+footer {
+  position: sticky;
+  bottom: 0px;
+}
